@@ -33,7 +33,7 @@ const DATA = Object.freeze({
     { id: "f2", name: "Fries + 1/4 Pork", portion: "Mix", priceKsh: 350, category: "Fries", desc: "Fries with tasty pork.", image: "images/image-05.jpg" },
     { id: "f3", name: "Fries Mix 1kg Pork", portion: "1kg Platter", priceKsh: 1400, category: "Fries", desc: "Massive pork & fries mix.", image: "images/image-04.jpg" },
     { id: "s1", name: "Extra Greens / Ugali", portion: "Side", priceKsh: 50, category: "Sides", desc: "Fresh greens or hot ugali.", image: "images/greens.jpg" },
-    { id: "d1", name: "Soda (300ml)", portion: "300ml", priceKsh: 50, category: "Drinks", desc: "Coke, Fanta, Sprite, etc.", image: "images/image-08.jpg" },
+    { id: "d1", name: "Soda (300ml)", portion: "300ml", priceKsh: 50, category: "Drinks", desc: "Coke, Fanta, Sprite, etc.", image: "images/coke-soda.jpg" },
     { id: "d2", name: "Minute Maid (400ml)", portion: "400ml", priceKsh: 80, category: "Drinks", desc: "Refreshing fruit juice.", image: "images/minute-maid.png" },
     { id: "c1", name: "1/4 Kienyeji Chicken", portion: "1/4 Chicken+Ugali", priceKsh: 400, category: "Chicken", desc: "KSh 350 (Chicken) + KSh 50 (Ugali). Order: 0707906991", image: "images/kienyeji-chicken-update.jpg", whatsapp: "254707906991" },
   ],
