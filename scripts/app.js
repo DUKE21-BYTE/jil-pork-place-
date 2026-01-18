@@ -29,7 +29,7 @@ const DATA = Object.freeze({
     { id: "cm1", name: "Combo: 1/4 Pork + Soda", portion: "Meal + 300ml Soda", priceKsh: 300, category: "Deals", desc: "1/4 Pork + Ugali + Greens + Soda.", image: "images/pork-soda-combo.jpg" },
     { id: "m2", name: "1/2 kg Pork + Ugali + Greens", portion: "Large", priceKsh: 500, category: "Pork Meals", desc: "Great for hungry appetite.", image: "images/image-03.jpg" },
     { id: "m3", name: "1 kg Pork + Ugali + Greens", portion: "Platter", priceKsh: 1000, category: "Pork Meals", desc: "Sharing platter (Wet/Dry).", image: "images/image-04.jpg" },
-    { id: "f1", name: "Fries (Plate)", portion: "1 plate", priceKsh: 130, category: "Fries", desc: "Crispy fries.", image: "images/image-05.jpg" },
+    { id: "f1", name: "Fries (Plate)", portion: "1 plate", priceKsh: 130, category: "Fries", desc: "Crispy fries.", image: "images/fries-plate.jpg" },
     { id: "f2", name: "Fries + 1/4 Pork", portion: "Mix", priceKsh: 350, category: "Fries", desc: "Fries with tasty pork.", image: "images/image-05.jpg" },
     { id: "f3", name: "Fries Mix 1kg Pork", portion: "1kg Platter", priceKsh: 1400, category: "Fries", desc: "Massive pork & fries mix.", image: "images/pork-mixed-chipo.jpg" },
     { id: "s1", name: "Extra Greens / Ugali", portion: "Side", priceKsh: 50, category: "Sides", desc: "Fresh greens or hot ugali.", image: "images/greens.jpg" },
