@@ -10,7 +10,7 @@
 const CONTACT = Object.freeze({
   businessName: "Jil Pork Place",
   area: "Ruaka",
-  whatsapp: "254758596269",
+  whatsapp: "254723959492",
   call: "254719419410",
   googleMapsQuery: "Jil Pork Place Ruaka",
   addressText: "Ruaka, Kenya",
@@ -20,31 +20,26 @@ const CONTACT = Object.freeze({
 
 const DATA = Object.freeze({
   hours: [
-    { day: "Mon", time: "9:00am – 9:00pm" },
-    { day: "Tue", time: "9:00am – 9:00pm" },
-    { day: "Wed", time: "9:00am – 9:00pm" },
-    { day: "Thu", time: "9:00am – 9:00pm" },
-    { day: "Fri", time: "9:00am – 10:00pm" },
-    { day: "Sat", time: "9:00am – 10:00pm" },
-    { day: "Sun", time: "10:00am – 8:00pm" },
+    { day: "Everyday", time: "8:00 AM – 10:00 PM" },
   ],
 
   menu: [
     { id: "m1", name: "Pork + Ugali + Greens", portion: "1/4 portion", priceKsh: 250, category: "Pork + Ugali", desc: "Classic combo.", image: "images/image-02.jpg" },
-    { id: "m2", name: "Pork + Ugali + Greens", portion: "1/2 kg", priceKsh: 500, category: "Pork + Ugali", desc: "Great for sharing.", image: "images/image-06.jpg" },
-    { id: "m3", name: "Pork + Ugali + Greens", portion: "1 kg", priceKsh: 1000, category: "Pork + Ugali", desc: "For the squad.", image: "images/image-03.jpg" },
-    { id: "m4", name: "Pork Mixed Chipo", portion: "1 platter", priceKsh: 1400, category: "Pork + Chips", desc: "Pork + chips platter.", image: "images/image-04.jpg" },
-    { id: "m5", name: "Chipo + Pork + Greens", portion: "1 plate", priceKsh: 350, category: "Pork + Chips", desc: "Quick and tasty.", image: "images/image-05.jpg" },
-    { id: "m6", name: "Dry Fry Pork", portion: "1/2 kg", priceKsh: 550, category: "Pork Specials", desc: "Tasty dry fry with onions.", image: "images/image-07.jpg" },
-    { id: "m7", name: "Wet Fry Pork", portion: "1 kg", priceKsh: 1100, category: "Pork Specials", desc: "Juicy wet fry.", image: "images/image-08.jpg" },
-    { id: "c1", name: "1/4 Kienyeji Chicken", portion: "1/4 Chicken+Ugali", priceKsh: 400, category: "Chicken", desc: "KSh 350 (Chicken) + KSh 50 (Ugali). Order: 0707906991", image: "images/image-11.jpg", whatsapp: "254707906991" },
+    { id: "m2", name: "Pork + Ugali + Greens", portion: "1/2 portion", priceKsh: 450, category: "Pork + Ugali", desc: "Larger portion to share.", image: "images/image-03.jpg" },
+    { id: "m3", name: "Wet Fry Pork", portion: "1 kg", priceKsh: 1200, category: "Pork Fry", desc: "Juicy/Saucy pork fry.", image: "images/image-04.jpg" },
+    { id: "m4", name: "Dry Fry Pork", portion: "1 kg", priceKsh: 1200, category: "Pork Fry", desc: "Crispy dry fry.", image: "images/image-05.jpg" },
+    { id: "m5", name: "Choma (Roast) Pork", portion: "1 kg", priceKsh: 1200, category: "Pork Choma", desc: "BBQ roasted pork.", image: "images/image-06.jpg" },
+    { id: "m6", name: "Accompaniments", portion: "Ugali / Greens", priceKsh: 50, category: "Sides", desc: "Extra ugali or greens.", image: "images/image-07.jpg" },
+    { id: "m7", name: "Soft Drinks", portion: "300ml / 500ml", priceKsh: 70, category: "Drinks", desc: "Soda (Coke, Fanta, etc).", image: "images/image-08.jpg" },
+    { id: "c1", name: "1/4 Kienyeji Chicken", portion: "1/4 Chicken+Ugali", priceKsh: 400, category: "Chicken", desc: "KSh 350 (Chicken) + KSh 50 (Ugali). Order: 0707906991", image: "images/kienyeji-chicken-update.jpg", whatsapp: "254707906991" },
   ],
 
   butchery: [
-    { id: "b1", name: "Pork Ribs", variant: "Unskinned", pricePerKgKsh: 680, desc: "Raw ribs (unskinned).", image: "images/image-01.jpg" },
+    { id: "b1", name: "Pork Ribs", variant: "Unskinned", pricePerKgKsh: 680, desc: "Raw ribs (unskinned).", image: "images/pork-ribs-new.jpg" },
     { id: "b2", name: "Pork Ribs", variant: "Skinned", pricePerKgKsh: 800, desc: "Raw ribs (skin removed).", image: "images/image-01.jpg" },
-    { id: "b3", name: "Pork Steak", variant: "Prime Cut", pricePerKgKsh: 750, desc: "Tender steak cuts.", image: "images/pork-steak-update.jpg" },
-    { id: "b4", name: "Pork Belly", variant: "Whole", pricePerKgKsh: 700, desc: "Perfect for roasting.", image: "images/pork-belly-update.jpg" },
+    { id: "b3", name: "Pork Steak", variant: "Prime Cut", pricePerKgKsh: 800, desc: "Tender steak cuts.", image: "images/pork-steak-update.jpg" },
+    { id: "b4", name: "Pork Belly", variant: "Whole", pricePerKgKsh: 680, desc: "Perfect for roasting.", image: "images/pork-belly-update.jpg" },
+    { id: "b5", name: "Pork Leg", variant: "Whole/Cut", pricePerKgKsh: 680, desc: "Fresh leg cut.", image: "images/pork-leg.jpg" },
   ],
 
   topSellerIds: ["m1", "m3", "c1"],
