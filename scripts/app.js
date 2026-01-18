@@ -26,7 +26,7 @@ const DATA = Object.freeze({
   menu: [
 
     { id: "m1", name: "1/4 Pork + Ugali + Greens", portion: "Standard", priceKsh: 250, category: "Pork Meals", desc: "Wet Fry or Dry Fry.", image: "images/image-02.jpg" },
-    { id: "cm1", name: "Combo: 1/4 Pork + Soda", portion: "Meal + 300ml Soda", priceKsh: 400, category: "Deals", desc: "1/4 Pork + Ugali + Greens + Soda.", image: "images/image-02.jpg" },
+    { id: "cm1", name: "Combo: 1/4 Pork + Soda", portion: "Meal + 300ml Soda", priceKsh: 300, category: "Deals", desc: "1/4 Pork + Ugali + Greens + Soda.", image: "images/pork-soda-combo.jpg" },
     { id: "m2", name: "1/2 kg Pork + Ugali + Greens", portion: "Large", priceKsh: 500, category: "Pork Meals", desc: "Great for hungry appetite.", image: "images/image-03.jpg" },
     { id: "m3", name: "1 kg Pork + Ugali + Greens", portion: "Platter", priceKsh: 1000, category: "Pork Meals", desc: "Sharing platter (Wet/Dry).", image: "images/image-04.jpg" },
     { id: "f1", name: "Fries (Plate)", portion: "1 plate", priceKsh: 130, category: "Fries", desc: "Crispy fries.", image: "images/image-05.jpg" },
