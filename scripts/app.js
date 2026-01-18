@@ -24,13 +24,17 @@ const DATA = Object.freeze({
   ],
 
   menu: [
-    { id: "m1", name: "Pork + Ugali + Greens", portion: "1/4 portion", priceKsh: 250, category: "Pork + Ugali", desc: "Classic combo.", image: "images/image-02.jpg" },
-    { id: "m2", name: "Pork + Ugali + Greens", portion: "1/2 portion", priceKsh: 450, category: "Pork + Ugali", desc: "Larger portion to share.", image: "images/image-03.jpg" },
-    { id: "m3", name: "Wet Fry Pork", portion: "1 kg", priceKsh: 1200, category: "Pork Fry", desc: "Juicy/Saucy pork fry.", image: "images/image-04.jpg" },
-    { id: "m4", name: "Dry Fry Pork", portion: "1 kg", priceKsh: 1200, category: "Pork Fry", desc: "Crispy dry fry.", image: "images/image-05.jpg" },
-    { id: "m5", name: "Choma (Roast) Pork", portion: "1 kg", priceKsh: 1200, category: "Pork Choma", desc: "BBQ roasted pork.", image: "images/image-06.jpg" },
-    { id: "m6", name: "Accompaniments", portion: "Ugali / Greens", priceKsh: 50, category: "Sides", desc: "Extra ugali or greens.", image: "images/image-07.jpg" },
-    { id: "m7", name: "Soft Drinks", portion: "300ml / 500ml", priceKsh: 70, category: "Drinks", desc: "Soda (Coke, Fanta, etc).", image: "images/image-08.jpg" },
+
+    { id: "m1", name: "1/4 Pork + Ugali + Greens", portion: "Standard", priceKsh: 250, category: "Pork Meals", desc: "Wet Fry or Dry Fry.", image: "images/image-02.jpg" },
+    { id: "cm1", name: "Combo: 1/4 Pork + Soda", portion: "Meal + 300ml Soda", priceKsh: 400, category: "Deals", desc: "1/4 Pork + Ugali + Greens + Soda.", image: "images/image-02.jpg" },
+    { id: "m2", name: "1/2 kg Pork + Ugali + Greens", portion: "Large", priceKsh: 500, category: "Pork Meals", desc: "Great for hungry appetite.", image: "images/image-03.jpg" },
+    { id: "m3", name: "1 kg Pork + Ugali + Greens", portion: "Platter", priceKsh: 1000, category: "Pork Meals", desc: "Sharing platter (Wet/Dry).", image: "images/image-04.jpg" },
+    { id: "f1", name: "Fries (Plate)", portion: "1 plate", priceKsh: 130, category: "Fries", desc: "Crispy fries.", image: "images/image-05.jpg" },
+    { id: "f2", name: "Fries + 1/4 Pork", portion: "Mix", priceKsh: 350, category: "Fries", desc: "Fries with tasty pork.", image: "images/image-05.jpg" },
+    { id: "f3", name: "Fries Mix 1kg Pork", portion: "1kg Platter", priceKsh: 1400, category: "Fries", desc: "Massive pork & fries mix.", image: "images/image-04.jpg" },
+    { id: "s1", name: "Extra Greens / Ugali", portion: "Side", priceKsh: 50, category: "Sides", desc: "Fresh greens or hot ugali.", image: "images/greens.jpg" },
+    { id: "d1", name: "Soda (300ml)", portion: "300ml", priceKsh: 50, category: "Drinks", desc: "Coke, Fanta, Sprite, etc.", image: "images/image-08.jpg" },
+    { id: "d2", name: "Minute Maid (400ml)", portion: "400ml", priceKsh: 80, category: "Drinks", desc: "Refreshing fruit juice.", image: "images/minute-maid.png" },
     { id: "c1", name: "1/4 Kienyeji Chicken", portion: "1/4 Chicken+Ugali", priceKsh: 400, category: "Chicken", desc: "KSh 350 (Chicken) + KSh 50 (Ugali). Order: 0707906991", image: "images/kienyeji-chicken-update.jpg", whatsapp: "254707906991" },
   ],
 
