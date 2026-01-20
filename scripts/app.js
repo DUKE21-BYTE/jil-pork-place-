@@ -41,13 +41,17 @@ const DATA = Object.freeze({
   butchery: [
     { id: "b1", name: "Pork Ribs", variant: "Unskinned", pricePerKgKsh: 680, desc: "Raw ribs (unskinned).", image: "images/pork-ribs-new.jpg" },
     { id: "b2", name: "Pork Ribs", variant: "Skinned", pricePerKgKsh: 800, desc: "Raw ribs (skin removed).", image: "images/image-01.jpg" },
-    { id: "b3", name: "Pork Steak", variant: "Prime Cut", pricePerKgKsh: 800, desc: "Tender steak cuts.", image: "images/pork-steak-update.jpg" },
+    { id: "b3", name: "Pork Steak (Fat Free)", variant: "Prime Cut", pricePerKgKsh: 920, desc: "Tender steak cuts.", image: "images/pork-steak-update.jpg" },
     { id: "b4", name: "Pork Belly", variant: "Whole", pricePerKgKsh: 680, desc: "Perfect for roasting.", image: "images/pork-belly-update.jpg" },
-    { id: "b5", name: "Pork Leg", variant: "Whole/Cut", pricePerKgKsh: 680, desc: "Fresh leg cut.", image: "images/pork-leg.jpg" },
+    { id: "b5", name: "Pork Shoulder", variant: "Whole/Cut", pricePerKgKsh: 680, desc: "Fresh shoulder cut.", image: "images/pork-leg.jpg" },
   ],
 
   topSellerIds: ["m1", "m3", "c1"],
 });
+
+const STATE = {
+  cart: [],
+};
 
 /* ---------------- Utils ---------------- */
 const qs = (s, r = document) => r.querySelector(s);
@@ -112,8 +116,8 @@ function menuCard(item) {
       <div class="card__body">
         <p>${clamp(item.desc, 120)}</p>
         <div class="card__actions">
-          <a class="btn btn--primary" href="${waLink(msg, item.whatsapp)}" target="_blank" rel="noopener">Order This</a>
-          <a class="btn btn--ghost" href="#order">Quick Order</a>
+          <button class="btn btn--primary" onclick="addToCart('${item.id}')">Add +</button>
+          <a class="btn btn--ghost" href="${waLink(msg, item.whatsapp)}" target="_blank" rel="noopener">Order Now</a>
         </div>
       </div>
     </article>
@@ -148,8 +152,8 @@ function butcheryCard(item) {
       <div class="card__body">
         <p>${clamp(item.desc, 120)}</p>
         <div class="card__actions">
-          <a class="btn btn--primary" href="${waLink(msg)}" target="_blank" rel="noopener">Order on WhatsApp</a>
-          <a class="btn btn--ghost" href="#order">Quick Order</a>
+          <button class="btn btn--primary" onclick="addToCart('${item.id}')">Add +</button>
+          <a class="btn btn--ghost" href="${waLink(msg)}" target="_blank" rel="noopener">Order Now</a>
         </div>
       </div>
     </article>
@@ -173,8 +177,9 @@ function renderHoursPreview() {
   const today = new Date().getDay(); // 0 Sun..6 Sat
   const map = { 0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat" };
   const key = map[today];
-  const found = DATA.hours.find((h) => h.day === key);
-  el.textContent = found ? `Today (${found.day}): ${found.time}` : "See hours in Location.";
+  // Match specific day OR "Everyday"
+  const found = DATA.hours.find((h) => h.day === key) || DATA.hours.find((h) => h.day === "Everyday");
+  el.textContent = found ? `Today: ${found.time}` : "See hours in Location.";
 }
 
 function renderMenu() {
@@ -341,15 +346,83 @@ function wireGlobalButtons() {
   const fbBtn = qs("#fbBtn");
   if (fbBtn) { fbBtn.href = CONTACT.facebook; fbBtn.target = "_blank"; fbBtn.rel = "noopener"; }
 
-  // Sticky bar
-  const sticky = qs("#stickyBar");
-  if (sticky) {
-    sticky.innerHTML = `
-      <a class="btn btn--primary" href="${wa}" target="_blank" rel="noopener">WhatsApp Order</a>
-      <a class="btn btn--ghost" href="${call}">Call</a>
-    `;
+  // Init Cart UI
+  updateCartUI();
+}
+
+/* ---------------- Cart Logic ---------------- */
+function addToCart(itemId) {
+  const item = DATA.menu.find(i => i.id === itemId) || DATA.butchery.find(i => i.id === itemId);
+  if (!item) return;
+
+  STATE.cart.push(item);
+  updateCartUI();
+
+  // Simple toast feedback
+  const btn = document.activeElement;
+  if (btn && btn.tagName === "BUTTON") {
+    const old = btn.textContent;
+    btn.textContent = "Added!";
+    setTimeout(() => btn.textContent = old, 1000);
   }
 }
+
+function updateCartUI() {
+  let float = qs("#cartFloat");
+  if (!float && STATE.cart.length > 0) {
+    float = document.createElement("a");
+    float.id = "cartFloat";
+    float.className = "cart-float";
+    float.href = "#order";
+    document.body.appendChild(float);
+  }
+
+  if (float) {
+    const count = STATE.cart.length;
+    if (count === 0) {
+      float.remove();
+    } else {
+      float.textContent = `View Order (${count})`;
+    }
+  }
+
+  // If we are on the order page, refresh the summary
+  if (getRoute() === "order") {
+    populateOrderForm();
+  }
+}
+
+function populateOrderForm() {
+  const ta = qs("textarea[name='order']");
+  if (!ta) return;
+
+  // If cart is empty, don't overwrite if user has typed something custom
+  if (STATE.cart.length === 0) return;
+
+  const lines = STATE.cart.map(item => {
+    const price = item.priceKsh || item.pricePerKgKsh;
+    const pUnit = item.priceKsh ? "" : "/kg";
+    return `• ${item.name} (${formatKsh(price)}${pUnit})`;
+  });
+
+  const total = STATE.cart.reduce((sum, item) => sum + (item.priceKsh || item.pricePerKgKsh), 0);
+
+  const text = [
+    "I'd like to order:",
+    ...lines,
+    "",
+    `Estimated Total: ${formatKsh(total)}`,
+    "(Plus delivery fee if applicable)"
+  ].join("\n");
+
+  ta.value = text;
+
+  // Optional: Scroll to form
+  ta.scrollIntoView({ behavior: "smooth", block: "center" });
+}
+
+// Ensure global access for onclick
+window.addToCart = addToCart;
 
 /* ---------------- Boot ---------------- */
 function boot() {

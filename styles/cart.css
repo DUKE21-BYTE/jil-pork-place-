@@ -1,0 +1,46 @@
+/* CSS for the new Floating Cart Button */
+.cart-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 999px;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(248, 134, 1, 0.5);
+    z-index: 100;
+    transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: popIn 0.3s ease-out;
+}
+
+.cart-float:hover {
+    transform: scale(1.05) translateY(-2px);
+    background: #ea3f00;
+}
+
+.cart-float:active {
+    transform: scale(0.95);
+}
+
+@keyframes popIn {
+    from {
+        transform: scale(0) translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1) translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Ensure sticky bar doesn't overlap on mobile */
+@media (max-width: 900px) {
+    .cart-float {
+        bottom: 80px;
+        /* Above the sticky bar */
+        right: 12px;
+    }
+}
