@@ -41,7 +41,7 @@ const DATA = Object.freeze({
   butchery: [
     { id: "b1", name: "Pork Ribs", variant: "Unskinned", pricePerKgKsh: 680, desc: "Raw ribs (unskinned).", image: "images/pork-ribs-new.jpg" },
     { id: "b2", name: "Pork Ribs", variant: "Skinned", pricePerKgKsh: 800, desc: "Raw ribs (skin removed).", image: "images/image-01.jpg" },
-    { id: "b3", name: "Pork Steak (Fat Free)", variant: "Prime Cut", pricePerKgKsh: 920, desc: "Tender steak cuts.", image: "images/pork-steak-update.jpg" },
+    { id: "b3", name: "Pork Steak (Fat Free)", variant: "Prime Cut", pricePerKgKsh: 920, desc: "Tender steak cuts.", image: "images/pork-steak-new.png" },
     { id: "b4", name: "Pork Belly", variant: "Whole", pricePerKgKsh: 680, desc: "Perfect for roasting.", image: "images/pork-belly-update.jpg" },
     { id: "b5", name: "Pork Shoulder", variant: "Whole/Cut", pricePerKgKsh: 680, desc: "Fresh shoulder cut.", image: "images/pork-leg.jpg" },
   ],
@@ -116,8 +116,8 @@ function menuCard(item) {
       <div class="card__body">
         <p>${clamp(item.desc, 120)}</p>
         <div class="card__actions">
-          <button class="btn btn--primary" onclick="addToCart('${item.id}')">Add +</button>
-          <a class="btn btn--ghost" href="${waLink(msg, item.whatsapp)}" target="_blank" rel="noopener">Order Now</a>
+          <button class="btn btn--primary" data-action="add-cart" data-id="${item.id}">Add +</button>
+          <a class="btn btn--ghost" href="${waLink(msg, item.whatsapp)}" target="_blank" rel="noopener noreferrer">Order Now</a>
         </div>
       </div>
     </article>
@@ -152,8 +152,8 @@ function butcheryCard(item) {
       <div class="card__body">
         <p>${clamp(item.desc, 120)}</p>
         <div class="card__actions">
-          <button class="btn btn--primary" onclick="addToCart('${item.id}')">Add +</button>
-          <a class="btn btn--ghost" href="${waLink(msg)}" target="_blank" rel="noopener">Order Now</a>
+          <button class="btn btn--primary" data-action="add-cart" data-id="${item.id}">Add +</button>
+          <a class="btn btn--ghost" href="${waLink(msg)}" target="_blank" rel="noopener noreferrer">Order Now</a>
         </div>
       </div>
     </article>
@@ -422,8 +422,6 @@ function populateOrderForm() {
 }
 
 // Ensure global access for onclick
-window.addToCart = addToCart;
-
 /* ---------------- Boot ---------------- */
 function boot() {
   // Init menu category select
@@ -436,13 +434,25 @@ function boot() {
   renderButchery();
   renderLocation();
 
+  // Event Delegation for dynamic buttons
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-action='add-cart']");
+    if (btn) {
+      const id = btn.dataset.id;
+      if (id) addToCart(id);
+    }
+  });
+
   // Wire interactions
   wireForms();
   wireGlobalButtons();
 
   // Live menu filtering
-  qs("#menuSearch")?.addEventListener("input", renderMenu);
-  qs("#menuCategory")?.addEventListener("change", renderMenu);
+  const searchInput = qs("#menuSearch");
+  if (searchInput) searchInput.addEventListener("input", renderMenu);
+  
+  const categorySelect = qs("#menuCategory");
+  if (categorySelect) categorySelect.addEventListener("change", renderMenu);
 
   // Route handling
   const onRoute = () => {
