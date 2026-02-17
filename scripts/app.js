@@ -464,7 +464,14 @@ function boot() {
     
     // Close mobile menu on route change
     const links = qs("#navLinks");
-    if (links) links.classList.remove("is-open");
+    const toggle = qs("#navToggle");
+    if (links && links.classList.contains("is-open")) {
+      links.classList.remove("is-open");
+      if (toggle) {
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`;
+      }
+    }
   };
 
   window.addEventListener("hashchange", onRoute);
@@ -475,6 +482,14 @@ function wireMobileMenu() {
   const toggle = qs("#navToggle");
   const links = qs("#navLinks");
   if (!toggle || !links) return;
+
+  const closeMenu = () => {
+    if (links.classList.contains("is-open")) {
+      links.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`;
+    }
+  };
 
   toggle.addEventListener("click", () => {
     const isOpen = links.classList.toggle("is-open");
@@ -489,10 +504,13 @@ function wireMobileMenu() {
   // Close when clicking outside
   document.addEventListener("click", (e) => {
     if (!links.contains(e.target) && !toggle.contains(e.target) && links.classList.contains("is-open")) {
-      links.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-      toggle.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`;
+      closeMenu();
     }
+  });
+
+  // Close when clicking a nav link
+  qsa(".nav__link").forEach((link) => {
+    link.addEventListener("click", closeMenu);
   });
 }
 
