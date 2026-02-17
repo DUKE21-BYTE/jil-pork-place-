@@ -361,9 +361,10 @@ function addToCart(itemId) {
   // Simple toast feedback
   const btn = document.activeElement;
   if (btn && btn.tagName === "BUTTON") {
+    if (btn.textContent === "Added!") return;
     const old = btn.textContent;
     btn.textContent = "Added!";
-    setTimeout(() => btn.textContent = old, 1000);
+    setTimeout(() => { if (btn.textContent === "Added!") btn.textContent = old; }, 1000);
   }
 }
 
@@ -462,46 +463,58 @@ function boot() {
     // ensure menu grid updates if user comes to menu
     if (route === "menu") renderMenu();
     
-    // Close mobile menu on route change
-    const links = qs("#navLinks");
-    const toggle = qs("#navToggle");
-    if (links && links.classList.contains("is-open")) {
-      links.classList.remove("is-open");
-      if (toggle) toggle.setAttribute("aria-expanded", "false");
-    }
+    // Close mobile menu on route change to keep UI in sync
+    closeMobileMenu();
   };
 
   window.addEventListener("hashchange", onRoute);
   onRoute();
 }
 
+/**
+ * Shared function to close the mobile menu and reset the toggle button.
+ * This prevents the "out of sync" state where the menu is closed but the button thinks it's open.
+ */
+function closeMobileMenu() {
+  const toggle = qs("#navToggle");
+  const links = qs("#navLinks");
+  const overlay = qs("#navOverlay");
+  
+  if (links && links.classList.contains("is-open")) {
+    links.classList.remove("is-open");
+    if (overlay) overlay.classList.remove("is-active");
+    if (toggle) {
+      toggle.setAttribute("aria-expanded", "false");
+      toggle.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`;
+    }
+  }
+}
+
 function wireMobileMenu() {
   const toggle = qs("#navToggle");
   const links = qs("#navLinks");
+  const overlay = qs("#navOverlay");
   if (!toggle || !links) return;
-
-  const closeMenu = () => {
-    if (links.classList.contains("is-open")) {
-      links.classList.remove("is-open");
-      toggle.setAttribute("aria-expanded", "false");
-    }
-  };
 
   toggle.addEventListener("click", () => {
     const isOpen = links.classList.toggle("is-open");
+    if (overlay) overlay.classList.toggle("is-active", isOpen);
     toggle.setAttribute("aria-expanded", isOpen);
+    
+    // Animate icon
+    toggle.innerHTML = isOpen 
+      ? `<svg class="icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>` // Close (X)
+      : `<svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`; // Hamburger
   });
 
-  // Close when clicking outside
-  document.addEventListener("click", (e) => {
-    if (!links.contains(e.target) && !toggle.contains(e.target) && links.classList.contains("is-open")) {
-      closeMenu();
-    }
-  });
+  // Close when clicking the overlay (better than tracking target click)
+  if (overlay) {
+    overlay.addEventListener("click", closeMobileMenu);
+  }
 
-  // Close when clicking a nav link
-  qsa(".nav__link").forEach((link) => {
-    link.addEventListener("click", closeMenu);
+  // Close when clicking a nav link (seamless experience)
+  qsa(".nav__link").forEach(link => {
+    link.addEventListener("click", () => closeMobileMenu());
   });
 }
 
