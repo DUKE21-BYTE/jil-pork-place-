@@ -168,6 +168,18 @@ hr.sep {
   border-radius: 8px;
 }
 
+.nav__toggle .icon-close {
+  display: none;
+}
+
+.nav__toggle[aria-expanded="true"] .icon-menu {
+  display: none;
+}
+
+.nav__toggle[aria-expanded="true"] .icon-close {
+  display: block;
+}
+
 .nav__links {
   display: flex;
   flex-wrap: wrap;

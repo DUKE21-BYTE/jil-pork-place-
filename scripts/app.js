@@ -467,10 +467,7 @@ function boot() {
     const toggle = qs("#navToggle");
     if (links && links.classList.contains("is-open")) {
       links.classList.remove("is-open");
-      if (toggle) {
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`;
-      }
+      if (toggle) toggle.setAttribute("aria-expanded", "false");
     }
   };
 
@@ -487,18 +484,12 @@ function wireMobileMenu() {
     if (links.classList.contains("is-open")) {
       links.classList.remove("is-open");
       toggle.setAttribute("aria-expanded", "false");
-      toggle.innerHTML = `<svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`;
     }
   };
 
   toggle.addEventListener("click", () => {
     const isOpen = links.classList.toggle("is-open");
     toggle.setAttribute("aria-expanded", isOpen);
-    
-    // Animate icon (simple change)
-    toggle.innerHTML = isOpen 
-      ? `<svg class="icon" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>` // Close (X)
-      : `<svg class="icon" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>`; // Hamburger
   });
 
   // Close when clicking outside
