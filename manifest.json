@@ -3,8 +3,8 @@
   "short_name": "JilPork",
   "start_url": "/?source=pwa",
   "display": "standalone",
-  "background_color": "#0f172a",
-  "theme_color": "#0f172a",
+  "background_color": "#1e0905",
+  "theme_color": "#1e0905",
   "description": "Butchery and Pork Joint in Ruaka. Order fresh meals or raw cuts.",
   "icons": [
     {

@@ -262,11 +262,7 @@ hr.sep {
   padding: 28px 0 8px;
 }
 
-.hero h1 {
-  font-size: clamp(32px, 4vw, 48px);
-  margin: 0 0 10px;
-  letter-spacing: -.4px
-}
+/* .hero h1 duplicate removed — rule lives at the top of this file */
 
 .lead {
   color: rgba(229, 231, 235, .92);
@@ -339,9 +335,7 @@ hr.sep {
   padding: 22px 0
 }
 
-.section__head h2 {
-  margin: 0 0 6px
-}
+/* .section__head h2 duplicate removed — rule with color lives above */
 
 .section__head p {
   margin: 0;
@@ -374,10 +368,7 @@ hr.sep {
   background: rgba(255, 255, 255, .02)
 }
 
-.card h2,
-.card h3 {
-  margin: 0 0 8px
-}
+/* .card h2/.card h3 duplicate removed — rule with color lives above */
 
 .muted {
   color: var(--muted)
@@ -420,11 +411,7 @@ hr.sep {
   gap: 10px;
 }
 
-.price {
-  font-weight: 900;
-  letter-spacing: .2px;
-  white-space: nowrap
-}
+/* .price duplicate removed — rule with color: var(--highlight) lives above */
 
 .card__body {
   margin-top: 10px
@@ -445,8 +432,12 @@ hr.sep {
   padding: 22px 0 8px
 }
 
-.page-head h1 {
-  margin: 0 0 6px
+.page-head h1,
+.page-head__title {
+  margin: 0 0 6px;
+  font-size: clamp(26px, 3.5vw, 38px);
+  font-weight: 800;
+  color: var(--highlight);
 }
 
 .filters {

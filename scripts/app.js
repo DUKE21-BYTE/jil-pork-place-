@@ -317,7 +317,7 @@ function wireGlobalButtons() {
   const waCta = qs("#waCta");
   const waCta2 = qs("#waCta2");
   [waCta, waCta2].filter(Boolean).forEach((a) => {
-    a.href = wa; a.target = "_blank"; a.rel = "noopener";
+    a.href = wa; a.target = "_blank"; a.rel = "noopener noreferrer";
   });
 
   const calls = [qs("#callCta"), qs("#callCta2"), qs("#callCta3"), qs("#callCta4")].filter(Boolean);
@@ -328,23 +328,32 @@ function wireGlobalButtons() {
   if (year) year.textContent = String(new Date().getFullYear());
 
   const footerWa = qs("#footerWa");
-  if (footerWa) { footerWa.href = wa; footerWa.target = "_blank"; footerWa.rel = "noopener"; }
+  if (footerWa) { footerWa.href = wa; footerWa.target = "_blank"; footerWa.rel = "noopener noreferrer"; }
 
   const footerTt = qs("#footerTikTok");
-  if (footerTt) { footerTt.href = CONTACT.tiktok; footerTt.target = "_blank"; footerTt.rel = "noopener"; }
+  if (footerTt) { footerTt.href = CONTACT.tiktok; footerTt.target = "_blank"; footerTt.rel = "noopener noreferrer"; }
 
   const footerFb = qs("#footerFb");
-  if (footerFb) { footerFb.href = CONTACT.facebook; footerFb.target = "_blank"; footerFb.rel = "noopener"; }
+  if (footerFb) { footerFb.href = CONTACT.facebook; footerFb.target = "_blank"; footerFb.rel = "noopener noreferrer"; }
 
   const footerCall = qs("#footerCall");
   if (footerCall) footerCall.href = call;
 
   // New Big Buttons (Socials)
   const tiktokBtn = qs("#tiktokBtn");
-  if (tiktokBtn) { tiktokBtn.href = CONTACT.tiktok; tiktokBtn.target = "_blank"; tiktokBtn.rel = "noopener"; }
+  if (tiktokBtn) { tiktokBtn.href = CONTACT.tiktok; tiktokBtn.target = "_blank"; tiktokBtn.rel = "noopener noreferrer"; }
 
   const fbBtn = qs("#fbBtn");
-  if (fbBtn) { fbBtn.href = CONTACT.facebook; fbBtn.target = "_blank"; fbBtn.rel = "noopener"; }
+  if (fbBtn) { fbBtn.href = CONTACT.facebook; fbBtn.target = "_blank"; fbBtn.rel = "noopener noreferrer"; }
+
+  // Sticky Bar (mobile — WhatsApp + Call quick actions)
+  const stickyBar = qs("#stickyBar");
+  if (stickyBar) {
+    stickyBar.innerHTML = `
+      <a class="btn btn--primary" href="${wa}" target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+      <a class="btn btn--ghost" href="${call}">Call Now</a>
+    `;
+  }
 
   // Init Cart UI
   updateCartUI();
@@ -355,7 +364,12 @@ function addToCart(itemId) {
   const item = DATA.menu.find(i => i.id === itemId) || DATA.butchery.find(i => i.id === itemId);
   if (!item) return;
 
-  STATE.cart.push(item);
+  const existing = STATE.cart.find(e => e.item.id === itemId);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    STATE.cart.push({ item, qty: 1 });
+  }
   updateCartUI();
 
   // Simple toast feedback
@@ -370,7 +384,9 @@ function addToCart(itemId) {
 
 function updateCartUI() {
   let float = qs("#cartFloat");
-  if (!float && STATE.cart.length > 0) {
+  const totalCount = STATE.cart.reduce((sum, e) => sum + e.qty, 0);
+
+  if (!float && totalCount > 0) {
     float = document.createElement("a");
     float.id = "cartFloat";
     float.className = "cart-float";
@@ -379,11 +395,10 @@ function updateCartUI() {
   }
 
   if (float) {
-    const count = STATE.cart.length;
-    if (count === 0) {
+    if (totalCount === 0) {
       float.remove();
     } else {
-      float.textContent = `View Order (${count})`;
+      float.textContent = `View Order (${totalCount})`;
     }
   }
 
@@ -400,13 +415,14 @@ function populateOrderForm() {
   // If cart is empty, don't overwrite if user has typed something custom
   if (STATE.cart.length === 0) return;
 
-  const lines = STATE.cart.map(item => {
+  const lines = STATE.cart.map(({ item, qty }) => {
     const price = item.priceKsh || item.pricePerKgKsh;
     const pUnit = item.priceKsh ? "" : "/kg";
-    return `• ${item.name} (${formatKsh(price)}${pUnit})`;
+    const qtyStr = qty > 1 ? ` x${qty}` : "";
+    return `• ${item.name}${qtyStr} (${formatKsh(price)}${pUnit})`;
   });
 
-  const total = STATE.cart.reduce((sum, item) => sum + (item.priceKsh || item.pricePerKgKsh), 0);
+  const total = STATE.cart.reduce((sum, { item, qty }) => sum + (item.priceKsh || item.pricePerKgKsh) * qty, 0);
 
   const text = [
     "I'd like to order:",
