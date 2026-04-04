@@ -23,7 +23,7 @@
   <meta name="geo.placename" content="Ruaka, Nairobi, Kenya" />
   <meta name="geo.position" content="-1.2120;36.8020" />
   <meta name="ICBM" content="-1.2120, 36.8020" />
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; frame-src https://www.google.com; connect-src 'self';">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://www.google-analytics.com https://www.googletagmanager.com; frame-src https://www.google.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com;">
 
   <link rel="stylesheet" href="styles/styles.css" />
   <link rel="stylesheet" href="styles/cart.css" />
@@ -267,12 +267,12 @@
         </div>
       </section>
 
-      <section class="section section--soft" style="background: var(--surface-soft); border-radius: 20px; padding: 40px; text-align: center; margin: 40px 0;">
+      <section class="section section--soft gem-section">
         <div class="section__head">
           <h2>The Hidden Gem of Ruaka</h2>
           <p>Since we opened, we've become the local favorite for <strong>the best pork in town</strong>. From our family-run butchery to your plate, we guarantee the <strong>freshest pork</strong> in Ruaka.</p>
         </div>
-        <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 30px;">
+        <div class="grid gem-grid">
           <div>
             <h3>Daily Freshness</h3>
             <p class="muted">We source our pork daily to ensure every bite is tender and flavorful.</p>

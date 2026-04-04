@@ -268,7 +268,7 @@ hr.sep {
   padding: 28px 0 8px;
 }
 
-/* .hero h1 duplicate removed — rule lives at the top of this file */
+
 
 .lead {
   color: rgba(229, 231, 235, .92);
@@ -346,7 +346,7 @@ hr.sep {
   padding: 22px 0
 }
 
-/* .section__head h2 duplicate removed — rule with color lives above */
+
 
 .section__head p {
   margin: 0;
@@ -379,7 +379,7 @@ hr.sep {
   background: rgba(255, 255, 255, .02)
 }
 
-/* .card h2/.card h3 duplicate removed — rule with color lives above */
+
 
 .muted {
   color: var(--muted)
@@ -422,7 +422,7 @@ hr.sep {
   gap: 10px;
 }
 
-/* .price duplicate removed — rule with color: var(--highlight) lives above */
+
 
 .card__body {
   margin-top: 10px
@@ -739,9 +739,26 @@ textarea {
   background: rgba(255, 255, 255, 0.1);
 }
 
+
 .rating {
   color: #fbbf24;
   font-size: 18px;
   margin-bottom: 6px;
   letter-spacing: 2px;
 }
+
+.gem-section {
+  background: var(--soft) !important;
+  border-radius: 20px;
+  padding: 40px !important;
+  text-align: center;
+  margin: 40px 0;
+  border: 1px solid var(--line);
+}
+
+.gem-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 20px !important;
+  margin-top: 30px !important;
+}
+
