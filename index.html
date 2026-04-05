@@ -14,9 +14,9 @@
 
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jil Pork Place — Best Pork in Ruaka | Butchery & Pork Restaurant Nairobi</title>
+  <title>Jil Pork Place & Kienyeji Chicken — Ruaka | Butchery & Restaurant</title>
   <meta name="description"
-    content="Jil Pork Place is Ruaka's top-rated pork restaurant & butchery. Fresh pork ribs, wet fry, dry fry with ugali & greens from KSh 250. Hidden gem near Nairobi — order on WhatsApp or call now!" />
+    content="Jil Pork Place & Kienyeji Chicken in Ruaka. Best pork meals, raw pork cuts, and organic Kienyeji chicken (Wet Fry, Dry Fry, Boiled) from KSh 350. Order on WhatsApp!" />
   <meta name="keywords" content="best pork in Ruaka, best pork place Nairobi, best pork restaurant Kenya, freshest pork Nairobi, pork joint Ruaka, hidden gem Ruaka, pork ribs Ruaka, pork butchery Ruaka, where to buy pork Nairobi, best place to buy pork Kenya, pork near me Ruaka, wet fry pork Ruaka, dry fry pork Nairobi, Uganda road pork, Ruaka restaurant, best food Ruaka, Jil Pork Place, Jil Pork, Ruaka butchery, pork ribs Kenya, fry pork Ruaka, pork Kiambu road, pork Runda, pork Gacharage, affordable pork Nairobi" />
   <meta name="theme-color" content="#0f172a" />
   <meta name="geo.region" content="KE-30" />
@@ -187,7 +187,7 @@
         <span class="brand__dot" aria-hidden="true"></span>
         <span>
           <div class="brand__name">Jil Pork Place</div>
-          <div class="brand__sub">Ruaka • Butchery + Pork Joint</div>
+          <div class="brand__sub">Ruaka • Butchery • Pork Joint • Kienyeji Chicken</div>
         </span>
       </a>
 
@@ -201,6 +201,9 @@
         <a class="nav__link" href="#home" data-route="home">Home</a>
         <a class="nav__link" href="#menu" data-route="menu">Menu</a>
         <a class="nav__link" href="#butchery" data-route="butchery">Butchery</a>
+        <a class="nav__link" href="#chicken" data-route="chicken">Chicken</a>
+        <a class="nav__link" href="#platter" data-route="platter">Platter</a>
+        <a class="nav__link" href="#catering" data-route="catering">Catering</a>
         <a class="nav__link" href="#order" data-route="order">Order</a>
         <a class="nav__link" href="#location" data-route="location">Location</a>
       </div>
@@ -214,7 +217,7 @@
     <section class="route" id="home" data-page="home">
       <section class="hero">
         <div class="hero__content">
-          <p class="badge">Ruaka • Butchery + Pork Joint</p>
+          <p class="badge" style="background: rgba(0,0,0,0.5); border-color: rgba(255,255,255,0.2);">Ruaka • Butchery • Pork • Chicken</p>
           <h1>The Best Pork in Ruaka</h1>
           <p class="lead">
             Discover the <strong>hidden gem</strong> of Ruaka. Freshly prepared pork meals (ugali + greens) and premium raw cuts from our butchery.
@@ -223,7 +226,13 @@
           <div class="actions">
             <a class="btn btn--primary" id="waCta" href="https://wa.me/254723959492?text=Hi%20Jil%20Pork%20Place%2C%20I'd%20like%20to%20order." target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
             <a class="btn btn--ghost" id="callCta" href="tel:254719419410">Call Now</a>
-            <a class="btn btn--link" href="#menu">View Menu →</a>
+          </div>
+          
+          <div style="margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap;">
+            <a href="#menu" class="pill" style="text-decoration: none; border-color: rgba(255,255,255,0.1);">Menu</a>
+            <a href="#butchery" class="pill" style="text-decoration: none; border-color: rgba(255,255,255,0.1);">Butchery</a>
+            <a href="#platter" class="pill" style="text-decoration: none; border-color: rgba(255,255,255,0.1);">Platter</a>
+            <a href="#catering" class="pill" style="text-decoration: none; border-color: rgba(255,255,255,0.1);">Catering</a>
           </div>
 
           <div class="trust-row" aria-label="Highlights">
@@ -242,14 +251,61 @@
           </div>
         </div>
 
-        <div class="hero__media" aria-hidden="true">
-          <div class="media-card">
-            <!-- Updated to use a real image for the hero -->
-            <img src="images/image-02.jpg" alt="Roasted Pork Ribs with Ugali and Greens at Jil Pork Place Ruaka"
-              style="width:100%; object-fit:cover; display:block;">
+        <div class="hero__media" aria-hidden="true" id="heroSlideshow">
+          <!-- Slide 1 -->
+          <div class="media-card slide-active">
+            <img src="images/pork-fries-featured.jpg" alt="Fries + 1/4 Pork" class="media-card__img">
             <div class="media-card__overlay">
-              <p class="media-card__title">Today’s Top Picks</p>
-              <p class="media-card__sub">Tap “Menu” for prices</p>
+              <h3 class="media-card__title">Fries + 1/4 Pork</h3>
+              <p class="media-card__sub">Only KSh 350!</p>
+            </div>
+          </div>
+          <!-- Slide 2 -->
+          <div class="media-card">
+            <img src="images/pork-mixed-chipo.jpg" alt="1kg Pork Mix Chipo Platter" class="media-card__img" loading="lazy">
+            <div class="media-card__overlay">
+              <h3 class="media-card__title">1kg Platter</h3>
+              <p class="media-card__sub">Only KSh 1400!</p>
+            </div>
+          </div>
+          <!-- Slide 3 -->
+          <div class="media-card">
+            <img src="images/pork-ugali-greens-clean.jpg" alt="1/4 Pork + Ugali" class="media-card__img" loading="lazy">
+            <div class="media-card__overlay">
+              <h3 class="media-card__title">1/4 Pork + Ugali</h3>
+              <p class="media-card__sub">Only KSh 250!</p>
+            </div>
+          </div>
+          <!-- Slide 4 -->
+          <div class="media-card">
+            <img src="images/beef-fries.jpg" alt="Beef + Fries" class="media-card__img" loading="lazy">
+            <div class="media-card__overlay">
+              <h3 class="media-card__title">Beef + Fries</h3>
+              <p class="media-card__sub">Only KSh 400!</p>
+            </div>
+          </div>
+          <!-- Slide 5 -->
+          <div class="media-card">
+            <img src="images/kienyeji-dry-fry.png" alt="1/4 Kienyeji Chicken (Dry Fry)" class="media-card__img" loading="lazy">
+            <div class="media-card__overlay">
+              <h3 class="media-card__title">Kienyeji Chicken</h3>
+              <p class="media-card__sub">Dry Fry KSh 350!</p>
+            </div>
+          </div>
+          <!-- Slide 6 -->
+          <div class="media-card">
+            <img src="images/fatty-dry-fry.jpg" alt="Fatty Pork Dry Fry" class="media-card__img" loading="lazy">
+            <div class="media-card__overlay">
+              <h3 class="media-card__title">Fatty Pork Dry Fry</h3>
+              <p class="media-card__sub">Only KSh 250!</p>
+            </div>
+          </div>
+          <!-- Slide 7 -->
+          <div class="media-card">
+            <img src="images/pork-chops.jpg" alt="Raw Pork Chops" class="media-card__img" loading="lazy">
+            <div class="media-card__overlay">
+              <h3 class="media-card__title">Raw Pork Chops</h3>
+              <p class="media-card__sub">KSh 920 / kg</p>
             </div>
           </div>
         </div>
@@ -264,6 +320,18 @@
         <div class="section__footer">
           <a class="btn btn--ghost" href="#menu">See full menu</a>
           <a class="btn btn--ghost" href="#butchery">See butchery prices</a>
+        </div>
+      </section>
+
+      <!-- CHICKEN SECTION -->
+      <section class="section" id="chicken-home">
+        <div class="section__head">
+          <h2>Kienyeji Chicken Menu</h2>
+          <p>Fresh organic Kienyeji chicken — prepared just how you like it.</p>
+        </div>
+        <div class="grid" id="chickenMenu" aria-live="polite"></div>
+        <div class="section__footer">
+          <a class="btn btn--primary" href="#menu">View Full Chicken Menu</a>
         </div>
       </section>
 
@@ -310,6 +378,11 @@
             <p>“Delicious food and fair prices. Highly recommended.”</p>
             <p class="muted">— Aaron Muliro</p>
           </div>
+          <div class="card card--soft">
+            <div class="rating">★★★★★</div>
+            <p>“Best pork wet fry ever. Such a hidden gem!”</p>
+            <p class="muted">— Sarah N.</p>
+          </div>
         </div>
         <div class="section__footer">
           <a class="btn btn--ghost" href="https://maps.app.goo.gl/7FkpFCmBvDHHpEE59" target="_blank" rel="noopener noreferrer">See
@@ -323,21 +396,19 @@
           <h2>Frequently Asked Questions</h2>
           <p>Common questions we get.</p>
         </div>
-        <div class="grid">
-          <div class="card card--soft">
-            <h3>Do you deliver?</h3>
-            <p class="muted">Yes! We deliver to Ruaka, Runda, Gacharage, and nearby areas via boda. Delivery fee depends
-              on distance.</p>
-          </div>
-          <div class="card card--soft">
-            <h3>How do I pay?</h3>
-            <p class="muted">We accept M-Pesa (Buy Goods Till: <strong>753595</strong>) or Cash upon delivery/pickup.
-            </p>
-          </div>
-          <div class="card card--soft">
-            <h3>Is the pork fresh?</h3>
-            <p class="muted">100%. We receive fresh stock daily for both our butchery and restaurant.</p>
-          </div>
+        <div class="grid" style="grid-template-columns: 1fr; gap: 14px;">
+          <details class="card card--soft faq-card">
+            <summary class="faq-summary">Do you deliver?</summary>
+            <p class="muted" style="margin-top: 12px; margin-bottom: 0;">Yes! We deliver to Ruaka, Runda, Gacharage, and nearby areas via boda. Delivery fee depends on distance.</p>
+          </details>
+          <details class="card card--soft faq-card">
+            <summary class="faq-summary">How do I pay?</summary>
+            <p class="muted" style="margin-top: 12px; margin-bottom: 0;">We accept M-Pesa (Buy Goods Till: <strong>753595</strong>) or Cash upon delivery/pickup.</p>
+          </details>
+          <details class="card card--soft faq-card">
+            <summary class="faq-summary">Is the pork fresh?</summary>
+            <p class="muted" style="margin-top: 12px; margin-bottom: 0;">100%. We receive fresh stock daily for both our butchery and restaurant.</p>
+          </details>
         </div>
       </section>
 
@@ -447,6 +518,105 @@
           </form>
         </div>
       </section>
+
+      <section class="section">
+        <div class="card" style="text-align: center;">
+          <img src="images/all-pork-parts.jpg" alt="All pig parts available" style="width: 100%; border-radius: var(--radius); margin-bottom: 16px; display: block;" loading="lazy" />
+          <h3 style="margin-bottom: 8px;">All Pig Parts Available</h3>
+          <p class="muted" style="margin-top: 0; margin-bottom: 0;">All pork parts are available for ordering and will be delivered to your door step.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- PLATTER -->
+    <section class="route" id="platter" data-page="platter" hidden>
+      <section class="page-head">
+        <h2 class="page-head__title">Build Your Platter</h2>
+        <p class="muted">Customize your ultimate Jil Pork mix. Select what you want to add below.</p>
+      </section>
+      
+      <section class="section section--split">
+        <div class="grid" id="platterOptions" style="grid-template-columns: 1fr;">
+          <!-- JS injected platter items -->
+        </div>
+
+        <div class="card card--soft" style="position: sticky; top: 80px;">
+          <h2>Your Custom Platter</h2>
+          <ul class="checklist" id="platterSummaryList" style="margin-bottom: 20px;">
+            <li class="muted" style="list-style-type: none;">No items added yet.</li>
+          </ul>
+          <h3 style="display: flex; justify-content: space-between;">
+            <span>Total:</span>
+            <span id="platterTotal" class="price">KSh 0</span>
+          </h3>
+          <div class="actions" style="margin-top: 15px;">
+            <button class="btn btn--primary" id="orderPlatterBtn" style="width: 100%;">Order Platter on WhatsApp</button>
+            <button class="btn btn--ghost" id="clearPlatterBtn" style="width: 100%;">Clear Platter</button>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <!-- CATERING -->
+    <section class="route" id="catering" data-page="catering" hidden>
+      <section class="hero" style="background-image: linear-gradient(rgba(30,9,5,0.7), rgba(30,9,5,0.9)), url('images/image-03.jpg'); margin-top: 0; min-height: 300px; display: flex; align-items: center; justify-content: center; text-align: center;">
+        <div class="hero__content" style="max-width: 600px; margin: 0 auto;">
+          <h1 style="text-shadow: none;">Bulk Orders & Catering</h1>
+          <p class="lead" style="margin: 0 auto 16px;">Hosting a party, chama, or family gathering? We supply premium raw cuts at wholesale prices, or we can deliver fully cooked platters for your group.</p>
+        </div>
+      </section>
+
+      <section class="section section--split">
+        <div class="card">
+          <h2>Request a Quote</h2>
+          <p class="muted">Tell us what you need and we'll give you a special bulk rate.</p>
+
+          <form id="cateringForm" class="form" novalidate>
+            <div class="form__row">
+              <label class="input">
+                <span class="input__label">Name / Organizer</span>
+                <input name="name" required placeholder="e.g. Chama XYZ" />
+              </label>
+              <label class="input">
+                <span class="input__label">Guest Count</span>
+                <input name="guests" inputmode="numeric" placeholder="e.g. 15" />
+              </label>
+            </div>
+            
+            <label class="input">
+              <span class="input__label">Needs</span>
+              <select name="type">
+                <option value="Raw Meat (Wholesale)">Raw Meat (Wholesale)</option>
+                <option value="Cooked Meals (Catering)">Cooked Meals (Catering)</option>
+                <option value="Both Raw & Cooked">Both Raw & Cooked</option>
+              </select>
+            </label>
+
+            <label class="input">
+              <span class="input__label">Details</span>
+              <textarea name="details" rows="3" required placeholder="e.g. We need 10kg of pork wet fry, 5kg of ribs, and ugali..."></textarea>
+            </label>
+
+            <div class="actions">
+              <button class="btn btn--primary" type="submit">Submit Request on WhatsApp</button>
+            </div>
+            <p class="form__hint" id="cateringFormHint" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="card card--soft">
+          <h3>Why Choose Us?</h3>
+          <ul class="checklist">
+            <li>Discounted wholesale rates for massive orders.</li>
+            <li>We handle the stressful cooking — perfect for Chamas.</li>
+            <li>Customized cuts exactly as you want them.</li>
+            <li>Reliable delivery to your event venue.</li>
+          </ul>
+          <hr class="sep" />
+          <p class="muted">Call us directly to discuss your event sizes and preferences right away.</p>
+          <a class="btn btn--ghost" href="tel:254719419410">Call to Discuss</a>
+        </div>
+      </section>
     </section>
 
     <!-- ORDER -->
@@ -509,9 +679,22 @@
             <a class="btn btn--primary" id="waCta2" href="https://wa.me/254723959492?text=Hi%20Jil%20Pork%20Place%2C%20I'd%20like%20to%20order." target="_blank" rel="noopener noreferrer">Open WhatsApp</a>
             <a class="btn btn--ghost" id="callCta3" href="tel:254719419410">Call</a>
           </div>
+          
           <hr class="sep" />
-          <p class="muted">
-            Tip: Add your most ordered items like “1/4 pork + ugali + greens” and we’ll confirm quickly.
+          <h3>Delivery Charges</h3>
+          <p class="muted" style="font-size: 14px; margin-bottom: 12px; margin-top: 0;">M-Pesa Till: <strong>753595</strong> • Call: <strong>0719419410</strong></p>
+          <ul style="list-style: none; padding: 0; margin: 0; font-size: 15px; color: var(--muted);">
+            <li style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 8px;"><span>Ruaka & Environs</span> <strong>FREE</strong></li>
+            <li style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 8px;"><span>Joyland - Gacharage</span> <strong>50/=</strong></li>
+            <li style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 8px;"><span>Gacharage - Ndenderu</span> <strong>100/=</strong></li>
+            <li style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 8px;"><span>Muchatha</span> <strong>50/=</strong></li>
+            <li style="display: flex; justify-content: space-between; padding-bottom: 8px; border-bottom: 1px solid rgba(255,255,255,0.05); margin-bottom: 8px;"><span>Two Rivers / Roselyn</span> <strong>50/=</strong></li>
+            <li style="display: flex; justify-content: space-between;"><span>Village Market / Gigiri</span> <strong>100/=</strong></li>
+          </ul>
+
+          <hr class="sep" />
+          <p class="muted" style="font-size: 14px;">
+            Tip: Add your most ordered items like “1/4 pork + ugali + greens” directly into WhatsApp and we’ll confirm your delivery area quickly.
           </p>
         </div>
       </section>
@@ -584,7 +767,11 @@
 
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer" style="text-align: center; padding-bottom: 40px;">
+    <div class="footer-branding" style="margin-bottom: 20px;">
+      <img src="images/jil-logo.png" alt="Jil Pork Place Logo" class="footer-logo" />
+      <p class="welcome-tag" style="font-weight: 800; color: var(--highlight); margin-top: 10px; font-size: 18px; letter-spacing: 1px;">Welcome to Jilpork Place</p>
+    </div>
     <div class="footer">
       <div id="footerLeft">© <span id="year"></span> Jil Pork Place. Ruaka.</div>
       <div>
@@ -614,8 +801,14 @@
             <path
               d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.51 1.51a15.09 15.09 0 01-6.59-6.59l1.51-1.51a.98.98 0 00.24-1.01c-.36-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" />
           </svg>
-        </a>
       </div>
+    </div>
+    
+    <div style="margin-top: 24px; font-size: 14px; padding: 0 16px; line-height: 1.6; text-align: center; word-wrap: break-word;">
+      <span class="muted">Need help or want to give feedback?</span> 
+      <span style="display: inline-block; margin-top: 4px;">
+        <a href="https://wa.me/254758596269" target="_blank" rel="noopener noreferrer" style="color: var(--primary); text-decoration: none; font-weight: bold;">Contact Support</a>
+      </span>
     </div>
   </footer>
 

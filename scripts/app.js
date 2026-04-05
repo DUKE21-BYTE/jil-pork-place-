@@ -24,18 +24,27 @@ const DATA = Object.freeze({
   ],
 
   menu: [
-
-    { id: "m1", name: "1/4 Pork + Ugali + Greens", portion: "Standard", priceKsh: 250, category: "Pork Meals", desc: "Wet Fry or Dry Fry.", image: "images/image-02.jpg" },
+    { id: "m1", name: "1/4 Pork + Ugali + Greens", portion: "Standard", priceKsh: 250, category: "Pork Meals", desc: "Wet Fry or Dry Fry.", image: "images/pork-ugali-greens-clean.jpg" },
+    { id: "m6", name: "1/4 Fry Pork (No Ugali)", portion: "Meat Only", priceKsh: 230, category: "Pork Meals", desc: "1/4 Fry Pork without Ugali.", image: "images/fatty-dry-fry.jpg" },
     { id: "cm1", name: "Combo: 1/4 Pork + Soda", portion: "Meal + 300ml Soda", priceKsh: 300, category: "Deals", desc: "1/4 Pork + Ugali + Greens + Soda.", image: "images/pork-soda-combo.jpg" },
-    { id: "m2", name: "1/2 kg Pork + Ugali + Greens", portion: "Large", priceKsh: 500, category: "Pork Meals", desc: "Great for hungry appetite.", image: "images/image-03.jpg" },
-    { id: "m3", name: "1 kg Pork + Ugali + Greens", portion: "Platter", priceKsh: 1000, category: "Pork Meals", desc: "Sharing platter (Wet/Dry).", image: "images/image-04.jpg" },
+    { id: "m2", name: "1/2 kg Pork + Ugali + Greens", portion: "Large", priceKsh: 500, category: "Pork Meals", desc: "Great for hungry appetite.", image: "images/image-13.jpg" },
+    { id: "m5", name: "3/4 kg Pork + Ugali + Greens", portion: "Extra Large", priceKsh: 750, category: "Pork Meals", desc: "Perfect for sharing or large appetite.", image: "images/pork.jpg" },
+    { id: "m3", name: "1 kg Pork + Ugali + Greens", portion: "Platter", priceKsh: 1000, category: "Pork Meals", desc: "Sharing platter (Wet/Dry).", image: "images/image-03.jpg" },
+    { id: "m4", name: "Fatty Pork (Dry Fry)", portion: "Standard", priceKsh: 250, category: "Pork Meals", desc: "Rich and flavorful fatty pork dry fry with ugali and greens.", image: "images/fatty-dry-fry.jpg" },
     { id: "f1", name: "Fries (Plate)", portion: "1 plate", priceKsh: 130, category: "Fries", desc: "Crispy fries.", image: "images/fries-plate.jpg" },
-    { id: "f2", name: "Fries + 1/4 Pork", portion: "Mix", priceKsh: 350, category: "Fries", desc: "Fries with tasty pork.", image: "images/image-05.jpg" },
-    { id: "f3", name: "Fries Mix 1kg Pork", portion: "1kg Platter", priceKsh: 1400, category: "Fries", desc: "Massive pork & fries mix.", image: "images/pork-mixed-chipo.jpg" },
-    { id: "s1", name: "Extra Greens / Ugali", portion: "Side", priceKsh: 50, category: "Sides", desc: "Fresh greens or hot ugali.", image: "images/greens.jpg" },
+    { id: "f2", name: "Fries + 1/4 Pork", portion: "Mix", priceKsh: 350, category: "Fries", desc: "Fries with tasty pork.", image: "images/pork-fries-featured.jpg" },
+    { id: "f3", name: "1kg Pork Mix Chipo Platter", portion: "1kg Platter", priceKsh: 1400, category: "Fries", desc: "Massive pork & fries mix.", image: "images/pork-mixed-chipo.jpg" },
+    { id: "c1", name: "1/4 Kienyeji Chicken + Ugali", portion: "Standard", priceKsh: 400, category: "Chicken Menu", desc: "Wet Fry Kienyeji chicken served with ugali and greens.", image: "images/kienyeji-chicken-update.jpg" },
+    { id: "c2", name: "1/4 Kienyeji Chicken (Dry Fry)", portion: "1/4 Chicken", priceKsh: 350, category: "Chicken Menu", desc: "Tasty dry fried Kienyeji chicken. Ugali extra.", image: "images/kienyeji-dry-fry.png" },
+    { id: "c3", name: "1/4 Kienyeji Chicken (Boiled)", portion: "With Soup", priceKsh: 350, category: "Chicken Menu", desc: "Healthy boiled Kienyeji chicken with nourishing soup.", image: "images/kienyeji-boiled.jpg" },
+    { id: "c4", name: "1/4 Kienyeji Chicken (Stir Fry)", portion: "1/4 Chicken", priceKsh: 400, category: "Chicken Menu", desc: "Expertly stir fried Kienyeji chicken with fresh vegetables.", image: "images/kienyeji-stir-fry.jpg" },
+    { id: "c5", name: "1/4 Kienyeji Chicken (Wet Fry)", portion: "1/4 Chicken", priceKsh: 350, category: "Chicken Menu", desc: "Rich and tasty Wet Fry Kienyeji chicken. Ugali extra.", image: "images/wetfry.jpg" },
+    { id: "bf1", name: "Beef + Ugali + Greens", portion: "Meal", priceKsh: 350, category: "Beef", desc: "Tasty beef stew served with greens and ugali.", image: "images/image-11.jpg" },
+    { id: "bf2", name: "Beef + Fries", portion: "Mix", priceKsh: 400, category: "Beef", desc: "Delicious beef stew served with our signature crispy fries.", image: "images/beef-fries.jpg" },
+    { id: "s1", name: "Extra Ugali", portion: "Side", priceKsh: 40, category: "Sides", desc: "Hot extra ugali.", image: "images/image-13.jpg" },
+    { id: "s2", name: "Extra Vegetables", portion: "Side", priceKsh: 40, category: "Sides", desc: "Fresh greens.", image: "images/greens.jpg" },
     { id: "d1", name: "Soda (300ml)", portion: "300ml", priceKsh: 50, category: "Drinks", desc: "Coke, Fanta, Sprite, etc.", image: "images/coke-soda.jpg" },
-    { id: "d2", name: "Minute Maid (400ml)", portion: "400ml", priceKsh: 80, category: "Drinks", desc: "Refreshing fruit juice.", image: "images/minute-maid.png" },
-    { id: "c1", name: "1/4 Kienyeji Chicken", portion: "1/4 Chicken+Ugali", priceKsh: 400, category: "Chicken", desc: "KSh 350 (Chicken) + KSh 50 (Ugali). Order: 0707906991", image: "images/kienyeji-chicken-update.jpg", whatsapp: "254707906991" },
+    { id: "d3", name: "Dasani Water (500ml)", portion: "500ml", priceKsh: 50, category: "Drinks", desc: "Chilled bottled water.", image: "images/dasani-water.png" },
   ],
 
   butchery: [
@@ -44,13 +53,20 @@ const DATA = Object.freeze({
     { id: "b3", name: "Pork Steak (Fat Free)", variant: "Prime Cut", pricePerKgKsh: 920, desc: "Tender steak cuts.", image: "images/pork-steak-new.png" },
     { id: "b4", name: "Pork Belly", variant: "Whole", pricePerKgKsh: 680, desc: "Perfect for roasting.", image: "images/pork-belly-update.jpg" },
     { id: "b5", name: "Pork Shoulder", variant: "Whole/Cut", pricePerKgKsh: 680, desc: "Fresh shoulder cut.", image: "images/pork-leg.jpg" },
+    { id: "b7", name: "Pork Chops", variant: "Select Cut", pricePerKgKsh: 920, desc: "Premium pork chops cut fresh daily.", image: "images/pork-chops.jpg" },
+    { id: "b8", name: "Pork Fillet", variant: "Lean Cut", pricePerKgKsh: 920, desc: "Extra tender and lean pork fillet.", image: "images/pork-fillet.jpg" },
+    { id: "b6", name: "Raw Kienyeji Chicken", variant: "1 kg", pricePerKgKsh: 1300, desc: "Fresh raw kienyeji chicken.", image: "images/raw-kienyeji-chicken.jpg" },
   ],
 
-  topSellerIds: ["m1", "m3", "c1"],
+  topSellerIds: ["f2", "f3", "m1", "m3", "c1", "c4", "bf1"],
 });
 
 const STATE = {
   cart: [],
+  platter: (() => {
+    try { return JSON.parse(localStorage.getItem("jil_platter") || "[]"); }
+    catch { return []; }
+  })(),
 };
 
 /* ---------------- Utils ---------------- */
@@ -117,7 +133,7 @@ function menuCard(item) {
         <p>${clamp(item.desc, 120)}</p>
         <div class="card__actions">
           <button class="btn btn--primary" data-action="add-cart" data-id="${item.id}">Add +</button>
-          <a class="btn btn--ghost" href="${waLink(msg, item.whatsapp)}" target="_blank" rel="noopener noreferrer">Order Now</a>
+          <a class="btn btn--ghost" href="${waLink(msg)}" target="_blank" rel="noopener noreferrer">Order Now</a>
         </div>
       </div>
     </article>
@@ -168,6 +184,15 @@ function renderTopSellers() {
   const map = new Map(DATA.menu.map((m) => [m.id, m]));
   const top = DATA.topSellerIds.map((id) => map.get(id)).filter(Boolean);
   host.innerHTML = top.map(menuCard).join("");
+}
+
+function renderChickenHome() {
+  const host = qs("#chickenMenu");
+  if (!host) return;
+
+  const chicken = DATA.menu.filter(i => i.category === "Chicken Menu" || i.category === "Chicken");
+  // Show first 3 chicken items on home
+  host.innerHTML = chicken.slice(0, 3).map(menuCard).join("");
 }
 
 function renderHoursPreview() {
@@ -301,6 +326,41 @@ function wireForms() {
         `• Service: ${service || "Pickup"}`,
         `• Location: ${location || "—"}`,
       ].filter(Boolean).join("\n");
+
+      window.open(waLink(msg), "_blank", "noopener");
+      setHint("Opening WhatsApp…");
+      // Clear cart after sending order
+      STATE.cart = [];
+      updateCartUI();
+    });
+  }
+
+  // Catering form
+  const cateringForm = qs("#cateringForm");
+  if (cateringForm) {
+    const hint = qs("#cateringFormHint");
+    const setHint = (t) => { if (hint) hint.textContent = t; };
+
+    cateringForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const fd = new FormData(cateringForm);
+      const name = String(fd.get("name") || "").trim();
+      const guests = String(fd.get("guests") || "").trim();
+      const type = String(fd.get("type") || "").trim();
+      const details = String(fd.get("details") || "").trim();
+
+      if (!name || !details) {
+        setHint("Please add name and details.");
+        return;
+      }
+
+      const msg = [
+        `Hi ${CONTACT.businessName}, I'd like a catering/bulk quote:`,
+        `• Name/Organizer: ${name}`,
+        `• Guest Count: ${guests || "N/A"}`,
+        `• Needs: ${type}`,
+        `• Details: ${details}`,
+      ].join("\n");
 
       window.open(waLink(msg), "_blank", "noopener");
       setHint("Opening WhatsApp…");
@@ -438,6 +498,107 @@ function populateOrderForm() {
   ta.scrollIntoView({ behavior: "smooth", block: "center" });
 }
 
+/* ---------------- Platter Builder ---------------- */
+function renderPlatterOptions() {
+  const host = qs("#platterOptions");
+  if (!host) return;
+
+  const platterItems = DATA.menu.filter(m => ["Fries", "Chicken Menu", "Pork Meals", "Beef", "Sides"].includes(m.category));
+  
+  host.innerHTML = platterItems.map(item => `
+    <article class="card card--soft" style="display: flex; align-items: center; justify-content: space-between; padding: 12px; gap: 10px;">
+      <div style="flex: 1;">
+        <h3 style="margin: 0; font-size: 15px;">${item.name}</h3>
+        <p class="muted" style="margin: 2px 0 0; font-size: 13px;">${formatKsh(item.priceKsh)}</p>
+      </div>
+      <button class="btn btn--primary" style="padding: 8px 12px;" onclick="addToPlatter('${item.id}', event)">Add</button>
+    </article>
+  `).join("");
+}
+
+window.addToPlatter = function(id, event) {
+  const item = DATA.menu.find(i => i.id === id);
+  if (!item) return;
+
+  const existing = STATE.platter.find(e => e.item.id === id);
+  if (existing) {
+    existing.qty += 1;
+  } else {
+    STATE.platter.push({ item, qty: 1 });
+  }
+  
+  localStorage.setItem("jil_platter", JSON.stringify(STATE.platter));
+  updatePlatterUI();
+  
+  const btn = event && event.currentTarget;
+  if (btn) {
+    const old = btn.textContent;
+    btn.textContent = "Added!";
+    setTimeout(() => { if (btn.textContent === "Added!") btn.textContent = old; }, 800);
+  }
+}
+
+window.removePlatterItem = function(index) {
+  STATE.platter.splice(index, 1);
+  localStorage.setItem("jil_platter", JSON.stringify(STATE.platter));
+  updatePlatterUI();
+}
+
+function clearPlatter() {
+  STATE.platter = [];
+  localStorage.setItem("jil_platter", JSON.stringify(STATE.platter));
+  updatePlatterUI();
+}
+
+function updatePlatterUI() {
+  const list = qs("#platterSummaryList");
+  const total = qs("#platterTotal");
+  if (!list || !total) return;
+
+  if (STATE.platter.length === 0) {
+    list.innerHTML = '<li class="muted" style="list-style-type: none;">No items added yet.</li>';
+    total.textContent = "KSh 0";
+    return;
+  }
+
+  let sum = 0;
+  list.innerHTML = STATE.platter.map((p, i) => {
+    sum += p.item.priceKsh * p.qty;
+    return `<li>${p.qty}x ${p.item.name} <button class="btn btn--ghost" style="padding: 2px 6px; font-size: 10px; margin-left: 6px;" onclick="removePlatterItem(${i})">X</button></li>`;
+  }).join("");
+
+  total.textContent = formatKsh(sum);
+}
+
+function wirePlatterBtn() {
+  const btn = qs("#orderPlatterBtn");
+  const clearBtn = qs("#clearPlatterBtn");
+  if (clearBtn) clearBtn.addEventListener("click", clearPlatter);
+  if (btn) {
+    btn.addEventListener("click", () => {
+      if (STATE.platter.length === 0) {
+        alert("Please add items to your platter first!");
+        return;
+      }
+      
+      let sum = 0;
+      const lines = STATE.platter.map(p => {
+        sum += p.item.priceKsh * p.qty;
+        return `• ${p.qty}x ${p.item.name}`;
+      });
+
+      const msg = [
+        `Hi ${CONTACT.businessName}, I've built a Custom Platter online:`,
+        ...lines,
+        ``,
+        `Total Estimated: ${formatKsh(sum)}`
+      ].join("\n");
+
+      window.open(waLink(msg), "_blank", "noopener");
+    });
+  }
+}
+
 // Ensure global access for onclick
 /* ---------------- Boot ---------------- */
 function boot() {
@@ -446,21 +607,35 @@ function boot() {
 
   // Render all sections once
   renderTopSellers();
+  renderChickenHome();
   renderHoursPreview();
   renderMenu();
   renderButchery();
   renderLocation();
+  renderPlatterOptions();
+  updatePlatterUI();
+  wirePlatterBtn();
 
   // Event Delegation for dynamic buttons
   document.addEventListener("click", (e) => {
-    const btn = e.target.closest("button[data-action='add-cart']");
-    if (btn) {
-      const id = btn.dataset.id;
+    if (e.target.matches(".btn[data-action='add-cart']")) {
+      const id = e.target.getAttribute("data-id");
       if (id) addToCart(id);
     }
   });
 
-  // Wire interactions
+  // Hero Slideshow Logic (Ultra-lightweight, guarded against duplicate intervals)
+  let currentSlide = 0;
+  const slides = qsa("#heroSlideshow .media-card");
+  if (slides.length > 1 && !window._slideshowTimer) {
+    window._slideshowTimer = setInterval(() => {
+      slides[currentSlide].classList.remove("slide-active");
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add("slide-active");
+    }, 2500);
+  }
+
+  // Live menu filteringactions
   wireForms();
   wireMobileMenu();
   wireGlobalButtons();
@@ -478,6 +653,15 @@ function boot() {
     showRoute(route);
     // ensure menu grid updates if user comes to menu
     if (route === "menu") renderMenu();
+    if (route === "chicken") {
+       const select = qs("#menuCategory");
+       if (select) {
+         select.value = "Chicken Menu"; 
+         renderMenu();
+       }
+       // Since 'chicken' route targets specific category, show menu page filtered
+       showRoute("menu"); 
+    }
     
     // Close mobile menu on route change to keep UI in sync
     closeMobileMenu();
