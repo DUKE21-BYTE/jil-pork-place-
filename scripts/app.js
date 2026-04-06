@@ -58,7 +58,7 @@ const DATA = Object.freeze({
     { id: "b6", name: "Raw Kienyeji Chicken",  variant: "1 kg",        pricePerKgKsh: 1300, desc: "Fresh raw kienyeji chicken.",            image: "images/raw-kienyeji-chicken.jpg" },
   ],
 
-  topSellerIds: ["f2", "f3", "m1", "m3", "c1", "c4", "bf1"],
+  topSellerIds: ["f2", "f3", "m1", "m3", "c1", "c4", "bf1", "s1"],
 });
 
 const STATE = {

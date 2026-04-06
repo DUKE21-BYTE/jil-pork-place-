@@ -969,3 +969,53 @@ details[open] .faq-summary::after {
   }
 }
 
+/* FAQ Accordion Styling */
+.faq-card {
+  margin-bottom: 12px;
+  border: 1px solid var(--line);
+  padding: 0 !important; /* Managed by summary/p */
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-card[open] {
+  border-color: var(--primary);
+  background: rgba(255, 255, 255, .03);
+}
+
+.faq-summary {
+  list-style: none; /* Remove default arrow */
+  padding: 16px;
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--highlight);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  user-select: none;
+}
+
+.faq-summary::-webkit-details-marker {
+  display: none; /* Remove default arrow Chrome/Safari */
+}
+
+.faq-summary::after {
+  content: " +";
+  color: var(--primary);
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.faq-card[open] .faq-summary::after {
+  content: " −";
+  transform: rotate(180deg);
+}
+
+.faq-card p {
+  padding: 0 16px 16px;
+  margin: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
