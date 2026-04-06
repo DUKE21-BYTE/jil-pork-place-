@@ -20,7 +20,8 @@ const CONTACT = Object.freeze({
 
 const DATA = Object.freeze({
   hours: [
-    { day: "Everyday", time: "8:00 AM – 10:00 PM" },
+    { day: "Mon - Sat", time: "8:00 AM – 9:00 PM" },
+    { day: "Sun", time: "8:00 AM – 7:00 PM" },
   ],
 
   menu: [
@@ -219,11 +220,11 @@ function renderHoursPreview() {
   const el = qs("#hoursPreview");
   if (!el) return;
 
-  const dayMap = { 0: "Sun", 1: "Mon", 2: "Tue", 3: "Wed", 4: "Thu", 5: "Fri", 6: "Sat" };
-  const key = dayMap[new Date().getDay()];
-  const found = DATA.hours.find((h) => h.day === key) || DATA.hours.find((h) => h.day === "Everyday");
-  el.textContent = found ? `Today: ${found.time}` : "See hours in Location.";
+  const isSunday = new Date().getDay() === 0;
+  const time = isSunday ? "8:00 AM – 7:00 PM" : "8:00 AM – 9:00 PM";
+  el.textContent = `Today: ${time}`;
 }
+
 
 function renderMenu() {
   const grid = qs("#menuGrid");
