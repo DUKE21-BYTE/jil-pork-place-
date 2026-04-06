@@ -648,6 +648,7 @@ function boot() {
     } else {
       showRoute(route);
       if (route === "menu") renderMenu();
+      if (route === "order") populateOrderForm();
     }
 
     closeMobileMenu();
