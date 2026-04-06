@@ -777,12 +777,9 @@ textarea {
     width: calc(100% - 24px);
   }
 
-  /* Compact slideshow on small screens — keep the animation visible */
+  /* Compact slideshow on small screens */
   .hero__media {
-    display: block;
-  }
-  .hero__media img {
-    height: 180px !important;
+    height: 320px;
   }
 
   .card {
