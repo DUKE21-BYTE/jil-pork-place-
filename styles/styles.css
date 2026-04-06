@@ -327,15 +327,39 @@ hr.sep {
 .hero__media {
   position: relative;
   z-index: 2;
+  height: 400px; /* Essential: fixed height for the slider container */
+  overflow: hidden;
+  border-radius: var(--radius2);
 }
 
-.hero__media img {
+.media-card {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+  pointer-events: none;
+}
+
+.media-card.slide-active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.media-card__img {
   width: 100%;
   height: 100%;
-  min-height: 400px;
   object-fit: cover;
   display: block;
-  border-radius: var(--radius2);
+}
+
+.media-card__overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
 }
 
 
@@ -985,14 +1009,13 @@ details[open] .faq-summary::after {
 
 .faq-summary {
   list-style: none; /* Remove default arrow */
-  padding: 16px;
+  padding: 20px;
   font-weight: 700;
   font-size: 16px;
   color: var(--highlight);
   cursor: pointer;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block; /* Safer than flex on summary elements */
+  position: relative;
   user-select: none;
 }
 
@@ -1002,14 +1025,16 @@ details[open] .faq-summary::after {
 
 .faq-summary::after {
   content: " +";
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
   color: var(--primary);
   font-size: 20px;
-  transition: transform 0.3s ease;
 }
 
 .faq-card[open] .faq-summary::after {
   content: " −";
-  transform: rotate(180deg);
 }
 
 .faq-card p {

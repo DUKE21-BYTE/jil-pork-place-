@@ -41,10 +41,10 @@ const DATA = Object.freeze({
     { id: "c5",  name: "1/4 Kienyeji Chicken (Wet Fry)",  portion: "1/4 Chicken",       priceKsh: 350,  category: "Chicken Menu", desc: "Rich and tasty Wet Fry Kienyeji chicken. Ugali extra.",             image: "images/wetfry.jpg" },
     { id: "bf1", name: "Beef + Ugali + Greens",            portion: "Meal",              priceKsh: 350,  category: "Beef",         desc: "Tasty beef stew served with greens and ugali.",                    image: "images/image-11.jpg" },
     { id: "bf2", name: "Beef + Fries",                     portion: "Mix",               priceKsh: 400,  category: "Beef",         desc: "Delicious beef stew served with our signature crispy fries.",      image: "images/beef-fries.jpg" },
-    { id: "s1",  name: "Extra Ugali",                      portion: "Side",              priceKsh: 40,   category: "Sides",        desc: "Hot extra ugali.",                                                 image: "images/extra-ugali.png" },
-    { id: "s2",  name: "Extra Vegetables",                 portion: "Side",              priceKsh: 40,   category: "Sides",        desc: "Fresh greens.",                                                    image: "images/greens.jpg" },
     { id: "d1",  name: "Soda (300ml)",                     portion: "300ml",             priceKsh: 50,   category: "Drinks",       desc: "Coke, Fanta, Sprite, etc.",                                        image: "images/coke-soda.jpg" },
     { id: "d3",  name: "Dasani Water (500ml)",             portion: "500ml",             priceKsh: 50,   category: "Drinks",       desc: "Chilled bottled water.",                                           image: "images/dasani-water.png" },
+    { id: "s1",  name: "Extra Ugali",                      portion: "Side",              priceKsh: 40,   category: "Sides",        desc: "Hot extra ugali.",                                                 image: "images/extra-ugali.png" },
+    { id: "s2",  name: "Extra Vegetables",                 portion: "Side",              priceKsh: 40,   category: "Sides",        desc: "Fresh greens.",                                                    image: "images/greens.jpg" },
   ],
 
   butchery: [
@@ -58,7 +58,7 @@ const DATA = Object.freeze({
     { id: "b6", name: "Raw Kienyeji Chicken",  variant: "1 kg",        pricePerKgKsh: 1300, desc: "Fresh raw kienyeji chicken.",            image: "images/raw-kienyeji-chicken.jpg" },
   ],
 
-  topSellerIds: ["f2", "f3", "m1", "m3", "c1", "c4", "bf1", "s1"],
+  topSellerIds: ["f2", "f3", "m1", "m3", "c1", "c4", "bf1"],
 });
 
 const STATE = {
