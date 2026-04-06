@@ -385,8 +385,8 @@ hr.sep {
 
 #heroSlideshow .media-card.slide-active {
   opacity: 1;
-  position: relative; 
   pointer-events: auto;
+  z-index: 5;
 }
 
 .media-card {
