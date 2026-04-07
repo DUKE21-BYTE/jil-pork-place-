@@ -2,20 +2,20 @@
 
 
 :root {
-  --bg: #110302;
-  --panel: #2b0e08;
-  --card: #36120a;
-  --soft: #260b06;
-  --text: #FEE4CC;
-  --muted: #eac8b0;
-  --line: #A73E14;
+  --bg: #0F0A08;
+  --panel: #3B1F1A;
+  --card: #4A241E;
+  --soft: #2E0F0C;
+  --text: #FFF7F2;
+  --muted: #E0C9C0;
+  --line: #7A2B19;
   --shadow: 0 16px 40px rgba(0, 0, 0, .65);
-  --primary: #F88601;
-  --highlight: #FFBB35;
+  --primary: #B71C1C;
+  --highlight: #F4C14F;
   --radius: 18px;
   --radius2: 24px;
   --max: 1100px;
-  --focus: 0 0 0 3px rgba(248, 134, 1, 0.4);
+  --focus: 0 0 0 3px rgba(183, 28, 28, 0.18);
 }
 
 * {
@@ -36,7 +36,7 @@ body {
     radial-gradient(1100px 700px at 20% -20%, rgba(172, 26, 8, 0.35), transparent 60%),
     radial-gradient(900px 600px at 95% 0%, rgba(167, 62, 20, 0.35), transparent 55%),
     linear-gradient(rgba(11, 4, 2, 0.88), rgba(11, 4, 2, 0.88)),
-    url('../images/fire-background.jpeg') center center / cover fixed no-repeat;
+    url('../images/fire-background.webp') center center / cover fixed no-repeat;
   color: var(--text);
   line-height: 1.55;
   overflow-x: hidden;
@@ -931,7 +931,7 @@ details[open] .faq-summary::after {
 
 .gem-section {
   position: relative;
-  background: url('../images/i-love-ruaka.jpeg') no-repeat center center;
+  background: url('../images/i-love-ruaka.webp') no-repeat center center;
   background-size: cover;
   border-radius: 20px;
   padding: 40px !important;
