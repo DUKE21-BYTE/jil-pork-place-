@@ -105,7 +105,6 @@ hr.sep {
   height: 12px;
   border-radius: 999px;
   background: rgba(255, 255, 255, .75);
-  box-shadow: 0 0 0 6px rgba(255, 255, 255, .08);
 }
 
 
@@ -225,13 +224,13 @@ hr.sep {
   background: var(--primary);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 4px 18px rgba(248, 134, 1, 0.35);
+  box-shadow: none;
 }
 
 .btn--primary:hover {
   background: #d97400;
   transform: translateY(-1px);
-  box-shadow: 0 6px 24px rgba(248, 134, 1, 0.50);
+  box-shadow: none;
 }
 
 .btn--ghost:hover {
@@ -819,7 +818,7 @@ textarea {
     border-radius: 6px;
     font-weight: 800;
     text-transform: uppercase;
-    box-shadow: 0 2px 8px rgba(248, 134, 1, 0.3);
+    box-shadow: none;
   }
 
   .price {
