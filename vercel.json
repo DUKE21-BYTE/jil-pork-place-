@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "destination": "https://www.jilporkplace.site/$1",
+      "permanent": true
+    }
+  ]
+}
