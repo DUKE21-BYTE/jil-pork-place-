@@ -10,12 +10,12 @@
   --muted: #E0C9C0;
   --line: #7A2B19;
   --shadow: 0 16px 40px rgba(0, 0, 0, .65);
-  --primary: #B71C1C;
-  --highlight: #F4C14F;
+  --primary: #F88601;       /* Original Jil Pork warm amber */
+  --highlight: #FFBB35;      /* Original Jil Pork gold */
   --radius: 18px;
   --radius2: 24px;
   --max: 1100px;
-  --focus: 0 0 0 3px rgba(183, 28, 28, 0.18);
+  --focus: 0 0 0 3px rgba(248, 134, 1, 0.28);
 }
 
 * {
@@ -225,12 +225,13 @@ hr.sep {
   background: var(--primary);
   color: #fff;
   border-color: transparent;
-  box-shadow: 0 4px 14px rgba(249, 79, 9, 0.15);
+  box-shadow: 0 4px 18px rgba(248, 134, 1, 0.35);
 }
 
 .btn--primary:hover {
-  background: #ea3f00;
+  background: #d97400;
   transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(248, 134, 1, 0.50);
 }
 
 .btn--ghost:hover {
