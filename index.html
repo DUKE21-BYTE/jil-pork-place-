@@ -67,9 +67,51 @@
       "https://www.jilporkplace.site/images/image-03.webp"
     ],
     "logo": "https://www.jilporkplace.site/images/favicon-32.png",
-    "priceRange": "KSh 250 - KSh 1400",
+    "priceRange": "$$ (KSh 250 - KSh 1400 per person)",
     "servesCuisine": ["Pork", "Kenyan", "African"],
-    "hasMenu": "https://www.jilporkplace.site/#menu",
+    "hasMenu": {
+      "@type": "Menu",
+      "name": "Jil Pork Main Menu",
+      "mainEntityOfPage": "https://www.jilporkplace.site/#menu",
+      "hasMenuSection": [
+        {
+          "@type": "MenuSection",
+          "name": "Cooked Pork Meals",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "1/4 Pork + Ugali + Greens",
+              "description": "Our signature wet or dry fry pork served with fresh ugali.",
+              "offers": { "@type": "Offer", "price": "250", "priceCurrency": "KES" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "1/2 Pork + Ugali + Greens",
+              "description": "Double portion of our famous wet fry pork.",
+              "offers": { "@type": "Offer", "price": "500", "priceCurrency": "KES" }
+            },
+            {
+              "@type": "MenuItem",
+              "name": "1kg Mixed Chipo Platter",
+              "description": "Large family platter with 1kg pork and fries.",
+              "offers": { "@type": "Offer", "price": "1400", "priceCurrency": "KES" }
+            }
+          ]
+        },
+        {
+          "@type": "MenuSection",
+          "name": "Fresh Butchery Cuts",
+          "hasMenuItem": [
+            {
+              "@type": "MenuItem",
+              "name": "Raw Pork per Kg",
+              "description": "Premium raw pork cuts delivered fresh.",
+              "offers": { "@type": "Offer", "price": "680", "priceCurrency": "KES" }
+            }
+          ]
+        }
+      ]
+    },
     "acceptsReservations": false,
     "address": {
       "@type": "PostalAddress",
