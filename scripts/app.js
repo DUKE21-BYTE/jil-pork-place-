@@ -80,6 +80,14 @@ const enc = (s) => encodeURIComponent(String(s ?? ""));
 const waLink  = (msg, phone = CONTACT.whatsapp) => `https://wa.me/${phone}?text=${enc(msg)}`;
 const CALL_LINK = `tel:${CONTACT.call}`;
 
+const formatPhone = (p) => {
+  let num = String(p || "").replace(/\D/g, "");
+  if (num.startsWith("0")) num = "254" + num.slice(1);
+  if (num.startsWith("254")) num = "+" + num;
+  if (!num.startsWith("+254") && num.length > 5) num = "+254" + num;
+  return num;
+};
+
 function clamp(text, max = 120) {
   const t = String(text ?? "");
   return t.length <= max ? t : `${t.slice(0, max - 1).trim()}…`;
@@ -312,6 +320,31 @@ function wireForms() {
     });
   }
 
+  function buildPosPayload(formData) {
+    const name = String(formData.get("name") || "").trim() || "Guest";
+    let phone = String(formData.get("phone") || "").trim();
+    phone = phone ? formatPhone(phone) : "+254700000000";
+
+    const notes = String(formData.get("notes") || "").trim();
+    const location = String(formData.get("location") || "").trim();
+    const finalNotes = [location, notes].filter(Boolean).join(" - ");
+
+    const products = STATE.cart.map(({ item, qty }) => {
+      const price = item.priceKsh || item.pricePerKgKsh || 0;
+      return { sku: item.id, qty: qty, price: price };
+    });
+
+    const totalNum = STATE.cart.reduce((sum, { item, qty }) => sum + ((item.priceKsh || item.pricePerKgKsh || 0) * qty), 0);
+    
+    return {
+      name: name,
+      phone_number: phone,
+      items: { products: products, notes: finalNotes },
+      total: totalNum.toFixed(2),
+      delivery_fee: "0.00" // placeholder
+    };
+  }
+
   // Quick order form
   const orderForm = qs("#quickOrderForm");
   if (orderForm) {
@@ -324,22 +357,36 @@ function wireForms() {
       const order    = String(fd.get("order")    || "").trim();
       const service  = String(fd.get("service")  || "").trim();
       const location = String(fd.get("location") || "").trim();
+      const notes    = String(fd.get("notes")    || "").trim();
 
       if (!name || !order) { setHint("Please add your name and order details."); return; }
 
-      const msg = [
-        `Hi ${CONTACT.businessName}, quick order:`,
-        `• Name: ${name}`,
-        phone ? `• My phone: ${phone}` : null,
-        `• Order: ${order}`,
-        `• Service: ${service || "Pickup"}`,
-        `• Location: ${location || "—"}`,
-      ].filter(Boolean).join("\n");
+      const payload = buildPosPayload(fd);
 
-      window.open(waLink(msg), "_blank", "noopener");
-      setHint("Opening WhatsApp…");
-      STATE.cart = [];
-      updateCartUI();
+      const submitBtn = orderForm.querySelector('button[type="submit"]');
+      const originalText = submitBtn.textContent;
+      submitBtn.textContent = "Processing...";
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        const msg = [
+          `Hi ${CONTACT.businessName}, quick order:`,
+          `• Name: ${name}`,
+          phone ? `• My phone: ${phone}` : null,
+          `• Order: ${order}`,
+          `• Service: ${service || "Pickup"}`,
+          `• Location: ${location || "—"}`,
+          notes ? `• Notes: ${notes}` : null,
+        ].filter(Boolean).join("\n");
+
+        window.open(waLink(msg), "_blank", "noopener");
+        setHint("Opening WhatsApp…");
+        STATE.cart = [];
+        updateCartUI();
+
+        submitBtn.textContent = originalText;
+        submitBtn.disabled = false;
+      }, 500);
     });
   }
 
