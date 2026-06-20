@@ -1,2 +1,6 @@
-# Force www canonical — prevents Google indexing the non-www version as a separate URL
-https://jilporkplace.site/*  https://www.jilporkplace.site/:splat  301!
+# Redirect old .site domain to new .com domain
+https://jilporkplace.site/*  https://www.jilporkplace.com/:splat  301!
+https://www.jilporkplace.site/*  https://www.jilporkplace.com/:splat  301!
+
+# Force www on the new .com domain
+https://jilporkplace.com/*  https://www.jilporkplace.com/:splat  301!
