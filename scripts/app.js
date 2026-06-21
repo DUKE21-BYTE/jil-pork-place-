@@ -10,7 +10,7 @@
 const CONTACT = Object.freeze({
   businessName: "Jil Pork Place",
   area: "Ruaka",
-  whatsapp: "254723959492",
+  whatsapp: "254719419410",
   call: "254719419410",
   googleMapsQuery: "Jil Pork Place Ruaka",
   addressText: "Ruaka, Kenya",
