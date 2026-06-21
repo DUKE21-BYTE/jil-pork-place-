@@ -362,6 +362,18 @@ function wireForms() {
       if (!name || !order) { setHint("Please add your name and order details."); return; }
 
       const payload = buildPosPayload(fd);
+      console.log("Built POS Payload:", payload);
+
+      // Send to POS API in the background (fire-and-forget)
+      // This will not block or stop the WhatsApp flow!
+      fetch("https://supplychainapp.katibu.africa/pos/delivery-orders/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      })
+      .then(res => res.json())
+      .then(data => console.log("POS API Response:", data))
+      .catch(err => console.error("POS API Error:", err));
 
       const submitBtn = orderForm.querySelector('button[type="submit"]');
       const originalText = submitBtn.textContent;
