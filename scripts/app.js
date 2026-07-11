@@ -353,10 +353,10 @@ function wireForms() {
       e.preventDefault();
       const fd       = new FormData(orderForm);
       const name     = String(fd.get("name")     || "").trim();
-      const phone    = String(fd.get("phone")    || "").trim();
       const order    = String(fd.get("order")    || "").trim();
       const service  = String(fd.get("service")  || "").trim();
       const location = String(fd.get("location") || "").trim();
+      const deliveryPhone = String(fd.get("deliveryPhone") || "").trim();
       const notes    = String(fd.get("notes")    || "").trim();
 
       if (!name || !order) { setHint("Please add your name and order details."); return; }
@@ -384,10 +384,10 @@ function wireForms() {
         const msg = [
           `Hi ${CONTACT.businessName}, quick order:`,
           `• Name: ${name}`,
-          phone ? `• My phone: ${phone}` : null,
           `• Order: ${order}`,
           `• Service: ${service || "Pickup"}`,
           `• Location: ${location || "—"}`,
+          deliveryPhone ? `• Delivery Phone: ${deliveryPhone}` : null,
           notes ? `• Notes: ${notes}` : null,
         ].filter(Boolean).join("\n");
 

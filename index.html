@@ -737,16 +737,10 @@
           <p class="muted">Fill this, then WhatsApp opens with your message.</p>
 
           <form id="quickOrderForm" class="form" novalidate>
-            <div class="form__row">
-              <label class="input">
-                <span class="input__label">Your name</span>
-                <input name="name" required placeholder="e.g. Dennis" />
-              </label>
-              <label class="input">
-                <span class="input__label">Phone (optional)</span>
-                <input name="phone" inputmode="tel" placeholder="e.g. 07xx…" />
-              </label>
-            </div>
+            <label class="input">
+              <span class="input__label">Your name</span>
+              <input name="name" required placeholder="e.g. Dennis" />
+            </label>
 
             <label class="input">
               <span class="input__label">Order details</span>
@@ -767,6 +761,11 @@
                 <input name="location" placeholder="e.g. Ruaka, Runda, Kiambu Rd…" />
               </label>
             </div>
+
+            <label class="input">
+              <span class="input__label">Delivery Contact Number (For rider to call)</span>
+              <input name="deliveryPhone" inputmode="tel" placeholder="e.g. 07xx…" />
+            </label>
 
             <label class="input">
               <span class="input__label">Delivery Notes (optional)</span>
